@@ -72,7 +72,7 @@ View(final)
 
 # tidy data set with the average of each variable for each activity and each subject
 tidyData = aggregate(final[,names(final) != c('activityId','subjectId')],by=list(activityId=final$activityId,subjectId = final$subjectId),mean);
-tidyData    = merge(tidyData,activityType,by='activityId',all.x=TRUE);
+tidyData    = merge(tidyData,activity,by='activityId');
 View(tidyData)
 
 # Export the tidyData set 
